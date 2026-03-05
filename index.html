@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HisStory — Every Story Leads to Him</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✝</text></svg>">
+</head>
+<body>
+
+<!-- ===== NAVIGATION ===== -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home');return false;"><img src="images/logo.png" class="nav-logo-img" alt="HisStory Logo">His<span>Story</span></a>
+  <ul class="nav-links">
+    <li><button data-page="home" class="active" onclick="showPage('home')">Home</button></li>
+    <li><button data-page="encounter" onclick="showPage('encounter')">Jesus Encounter</button></li>
+    <li><button data-page="saints" onclick="showPage('saints')">Daily Saints</button></li>
+    <li><button data-page="prayers" onclick="showPage('prayers')">Prayers</button></li>
+    <li><button data-page="gospel" onclick="showPage('gospel')">Gospel</button></li>
+  </ul>
+</nav>
+
+<!-- ===== HOME PAGE ===== -->
+<div id="page-home" class="page active">
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">A Catholic Community</div>
+      <h1 class="hero-title">
+        Every Story Matters.<br>
+        Every Story<br>
+        <em>Leads to Him.</em>
+      </h1>
+      <button class="hero-cta" onclick="showPage('encounter')">Share Your Encounter</button>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <div class="about-image">
+      <img src="images/jesus-cross.png" alt="Jesus on the Cross">
+    </div>
+    <div class="about-text">
+      <div class="section-label">Our Mission</div>
+      <p>I believe that every person carries a unique story shaped by different experiences, struggles, and victories. I believe our journeys may not look the same — there is one story that connects us all — the story of God's love.</p>
+      <br>
+      <p>I believe that when people share how God transformed their lives, it becomes a source of hope and inspiration for others. Each testimony has the power to remind someone that they are not alone and that God's love is present in every story.</p>
+    </div>
+  </section>
+
+  <section class="quote-section">
+    <img src="images/mother-teresa.png" alt="Saint Teresa of Calcutta" class="quote-saint-img">
+    <div class="quote-content">
+      <blockquote>Let no one ever come to you without leaving better and happier</blockquote>
+      <div class="quote-attribution">— Saint Teresa of Calcutta</div>
+    </div>
+  </section>
+
+  <section class="works-section">
+    <div class="section-label">The Catholic Tradition</div>
+    <h2>7 Corporal Works of Mercy</h2>
+    <p class="works-subtitle">Based on Matthew 25:31-46 — Click each work to learn more</p>
+    <div class="works-list">
+      <div class="work-item" onclick="openWorkModal('feed')">
+        <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?w=200&q=60" alt="Feed the hungry" onerror="this.style.display='none'">
+        <div class="work-item-title">Feed the hungry</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+      <div class="work-item" onclick="openWorkModal('drink')">
+        <img src="https://images.unsplash.com/photo-1548839140-29a749e1cf4d?w=200&q=60" alt="Give drink to the thirsty" onerror="this.style.display='none'">
+        <div class="work-item-title">Give drink to the thirsty</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+      <div class="work-item" onclick="openWorkModal('clothe')">
+        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=200&q=60" alt="Clothe the naked" onerror="this.style.display='none'">
+        <div class="work-item-title">Clothe the naked</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+      <div class="work-item" onclick="openWorkModal('shelter')">
+        <img src="https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?w=200&q=60" alt="Shelter the homeless" onerror="this.style.display='none'">
+        <div class="work-item-title">Shelter the homeless</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+      <div class="work-item" onclick="openWorkModal('sick')">
+        <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=200&q=60" alt="Visit the sick" onerror="this.style.display='none'">
+        <div class="work-item-title">Visit the sick</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+      <div class="work-item" onclick="openWorkModal('prison')">
+        <img src="https://images.unsplash.com/photo-1532153975070-2e9ab71f1b14?w=200&q=60" alt="Visit the imprisoned" onerror="this.style.display='none'">
+        <div class="work-item-title">Visit the imprisoned</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+      <div class="work-item" onclick="openWorkModal('bury')">
+        <img src="https://images.unsplash.com/photo-1552667466-07770ae110d0?w=200&q=60" alt="Bury the dead" onerror="this.style.display='none'">
+        <div class="work-item-title">Bury the dead</div>
+        <div class="work-read-more">Read More</div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-cross"><img src="images/logo.png" style="height:40px;opacity:0.7;filter:brightness(0) invert(1);" alt="logo"></div>
+    <div class="footer-logo">HisStory</div>
+    <p>Every story matters. Every story leads to Him.</p>
+    <br>
+    <p style="font-size:0.65rem;opacity:0.5;">In loving service to the Church</p>
+  </footer>
+</div>
+
+<!-- ===== JESUS ENCOUNTER PAGE ===== -->
+<div id="page-encounter" class="page">
+  <div class="encounter-hero">
+    <div class="encounter-hero-text">
+      <h1>Jesus Encounter</h1>
+      <p>"My grace is sufficient for you." — 2 Corinthians 12:9</p>
+    </div>
+  </div>
+  <div class="encounter-main">
+    <div class="journal-form-card">
+      <h2>Write Your Reflection</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="entry-title">Title of Your Encounter</label>
+          <input type="text" id="entry-title" placeholder="e.g. The Day God Answered My Prayer...">
+        </div>
+        <div class="form-group">
+          <label>Date</label>
+          <input type="text" id="entry-date-display" readonly style="cursor:default;color:var(--gold);" value="">
+        </div>
+      </div>
+      <div class="form-group" style="margin-bottom:20px">
+        <label for="entry-body">Your Reflection</label>
+        <textarea id="entry-body" placeholder="Share your encounter with Jesus... What did He say to your heart? How did He move in your life? How are you different because of this encounter?"></textarea>
+      </div>
+      <div class="photo-upload-area" id="upload-area">
+        <input type="file" id="photo-upload-input" accept="image/*" multiple onchange="handlePhotoUpload(event)">
+        <div class="upload-icon">📷</div>
+        <div class="upload-text">Click to add photos to your journal entry (optional)</div>
+      </div>
+      <div class="photo-preview" id="photo-preview"></div>
+      <br>
+      <button class="btn-submit" onclick="submitJournalEntry()">Save Reflection</button>
+    </div>
+    <div class="entries-header">
+      <h2>Encounter with the Lord</h2>
+      <span class="entries-count" id="entries-count">0 entries</span>
+    </div>
+    <div id="entries-list"></div>
+  </div>
+  <footer>
+    <div class="footer-cross"><img src="images/logo.png" style="height:40px;opacity:0.7;filter:brightness(0) invert(1);" alt="logo"></div>
+    <p>Your journal is saved locally on this device.</p>
+  </footer>
+</div>
+
+<!-- ===== DAILY SAINTS PAGE ===== -->
+<div id="page-saints" class="page">
+  <div class="saints-hero">
+    <h1>Daily Saints</h1>
+    <p>"Therefore, since we are surrounded by so great a cloud of witnesses..." — Hebrews 12:1</p>
+    <div class="month-nav">
+      <button class="month-btn" data-month="1" onclick="switchMonth(1)">January</button>
+      <button class="month-btn" data-month="2" onclick="switchMonth(2)">February</button>
+      <button class="month-btn" data-month="3" onclick="switchMonth(3)">March</button>
+      <button class="month-btn" data-month="4" onclick="switchMonth(4)">April</button>
+      <button class="month-btn" data-month="5" onclick="switchMonth(5)">May</button>
+      <button class="month-btn" data-month="6" onclick="switchMonth(6)">June</button>
+      <button class="month-btn" data-month="7" onclick="switchMonth(7)">July</button>
+      <button class="month-btn" data-month="8" onclick="switchMonth(8)">August</button>
+      <button class="month-btn" data-month="9" onclick="switchMonth(9)">September</button>
+      <button class="month-btn" data-month="10" onclick="switchMonth(10)">October</button>
+      <button class="month-btn" data-month="11" onclick="switchMonth(11)">November</button>
+      <button class="month-btn" data-month="12" onclick="switchMonth(12)">December</button>
+    </div>
+  </div>
+  <div class="saints-container">
+    <div id="saints-list"></div>
+  </div>
+  <footer>
+    <div class="footer-cross"><img src="images/logo.png" style="height:40px;opacity:0.7;filter:brightness(0) invert(1);" alt="logo"></div>
+    <p>Feast days listed according to the Roman Rite of the Catholic Church</p>
+  </footer>
+</div>
+
+<!-- ===== PRAYERS PAGE ===== -->
+<div id="page-prayers" class="page">
+  <div class="prayers-hero">
+    <div class="prayers-hero-text">
+      <h1>Prayers</h1>
+      <p>"Pray without ceasing." — 1 Thessalonians 5:17</p>
+    </div>
+  </div>
+  <div class="prayers-layout">
+    <aside class="prayers-sidebar">
+      <h3>Prayers</h3>
+      <button class="prayer-nav-btn active" data-prayer="rosary" onclick="showPrayer('rosary')">The Holy Rosary</button>
+      <button class="prayer-nav-btn" data-prayer="angelus" onclick="showPrayer('angelus')">The Angelus</button>
+      <button class="prayer-nav-btn" data-prayer="divine_mercy" onclick="showPrayer('divine_mercy')">Divine Mercy Chaplet</button>
+      <button class="prayer-nav-btn" data-prayer="saint_michael" onclick="showPrayer('saint_michael')">Saint Michael Prayer</button>
+      <button class="prayer-nav-btn" data-prayer="memorare" onclick="showPrayer('memorare')">The Memorare</button>
+      <button class="prayer-nav-btn" data-prayer="morning_offering" onclick="showPrayer('morning_offering')">Morning Offering</button>
+      <button class="prayer-nav-btn" data-prayer="act_of_contrition" onclick="showPrayer('act_of_contrition')">Act of Contrition</button>
+      <button class="prayer-nav-btn" data-prayer="act_of_faith" onclick="showPrayer('act_of_faith')">Act of Faith</button>
+      <button class="prayer-nav-btn" data-prayer="act_of_hope" onclick="showPrayer('act_of_hope')">Act of Hope</button>
+      <button class="prayer-nav-btn" data-prayer="act_of_love" onclick="showPrayer('act_of_love')">Act of Love</button>
+      <button class="prayer-nav-btn" data-prayer="come_holy_spirit" onclick="showPrayer('come_holy_spirit')">Come, Holy Spirit</button>
+      <button class="prayer-nav-btn" data-prayer="jesus_prayer" onclick="showPrayer('jesus_prayer')">The Jesus Prayer</button>
+      <button class="prayer-nav-btn" data-prayer="blessing_before_meals" onclick="showPrayer('blessing_before_meals')">Grace Before Meals</button>
+      <button class="prayer-nav-btn" data-prayer="prayer_for_dead" onclick="showPrayer('prayer_for_dead')">Prayer for the Dead</button>
+    </aside>
+    <div class="prayers-content">
+      <div id="prayer-rosary" class="prayer-section active">
+        <h2>The Holy Rosary</h2>
+        <p class="prayer-tagline">Pray with Mary, the perfect model of faith — "The Rosary is the weapon." — Padre Pio</p>
+        <div class="prayer-instruction">
+          <strong>How to Pray the Rosary</strong><br>
+          The Rosary consists of 5 decades (sets of 10 Hail Marys). Each decade is accompanied by meditation on a mystery from the lives of Jesus and Mary. Follow the steps below using your rosary beads.
+        </div>
+        <div class="rosary-guide-steps" id="rosary-guide-steps"></div>
+        <br><br>
+        <h3 style="font-family:'Cinzel',serif;font-size:1.3rem;color:var(--gold);margin-bottom:20px;letter-spacing:0.08em">The Mysteries of the Rosary</h3>
+        <div id="rosary-mysteries"></div>
+      </div>
+
+      <div id="prayer-angelus" class="prayer-section">
+        <h2>The Angelus</h2>
+        <p class="prayer-tagline">Prayed at 6:00 AM, Noon, and 6:00 PM — A meditation on the Incarnation</p>
+        <div id="prayer-text-angelus"></div>
+      </div>
+      <div id="prayer-divine_mercy" class="prayer-section">
+        <h2>Divine Mercy Chaplet</h2>
+        <p class="prayer-tagline">Prayed at 3:00 PM — The Hour of Mercy — Given to Saint Faustina Kowalska</p>
+        <div id="prayer-text-divine_mercy"></div>
+      </div>
+      <div id="prayer-saint_michael" class="prayer-section">
+        <h2>Prayer to Saint Michael the Archangel</h2>
+        <p class="prayer-tagline">Composed by Pope Leo XIII — A prayer of spiritual warfare and protection</p>
+        <div id="prayer-text-saint_michael"></div>
+      </div>
+      <div id="prayer-memorare" class="prayer-section">
+        <h2>The Memorare</h2>
+        <p class="prayer-tagline">A prayer of total confidence in Mary's intercession</p>
+        <div id="prayer-text-memorare"></div>
+      </div>
+      <div id="prayer-morning_offering" class="prayer-section">
+        <h2>Morning Offering</h2>
+        <p class="prayer-tagline">Consecrate every moment of your day to God</p>
+        <div id="prayer-text-morning_offering"></div>
+      </div>
+      <div id="prayer-act_of_contrition" class="prayer-section">
+        <h2>Act of Contrition</h2>
+        <p class="prayer-tagline">A prayer of perfect sorrow for sins</p>
+        <div id="prayer-text-act_of_contrition"></div>
+      </div>
+      <div id="prayer-act_of_faith" class="prayer-section">
+        <h2>Act of Faith</h2>
+        <p class="prayer-tagline">A prayer of total belief in God and His Church</p>
+        <div id="prayer-text-act_of_faith"></div>
+      </div>
+      <div id="prayer-act_of_hope" class="prayer-section">
+        <h2>Act of Hope</h2>
+        <p class="prayer-tagline">A prayer of confident trust in God's promises</p>
+        <div id="prayer-text-act_of_hope"></div>
+      </div>
+      <div id="prayer-act_of_love" class="prayer-section">
+        <h2>Act of Love</h2>
+        <p class="prayer-tagline">A prayer of love for God above all things</p>
+        <div id="prayer-text-act_of_love"></div>
+      </div>
+      <div id="prayer-come_holy_spirit" class="prayer-section">
+        <h2>Come, Holy Spirit</h2>
+        <p class="prayer-tagline">Veni Sancte Spiritus — Invoking the gifts of the Holy Spirit</p>
+        <div id="prayer-text-come_holy_spirit"></div>
+      </div>
+      <div id="prayer-jesus_prayer" class="prayer-section">
+        <h2>The Jesus Prayer</h2>
+        <p class="prayer-tagline">The ancient prayer of the Desert Fathers — Prayer of the Heart</p>
+        <div id="prayer-text-jesus_prayer"></div>
+      </div>
+      <div id="prayer-blessing_before_meals" class="prayer-section">
+        <h2>Grace Before and After Meals</h2>
+        <p class="prayer-tagline">Blessing food in gratitude to the Giver of all gifts</p>
+        <div id="prayer-text-blessing_before_meals"></div>
+      </div>
+      <div id="prayer-prayer_for_dead" class="prayer-section">
+        <h2>Prayer for the Souls in Purgatory</h2>
+        <p class="prayer-tagline">Remember and pray for the faithful departed</p>
+        <div id="prayer-text-prayer_for_dead"></div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-cross"><img src="images/logo.png" style="height:40px;opacity:0.7;filter:brightness(0) invert(1);" alt="logo"></div>
+    <p>Pray always — without ceasing</p>
+  </footer>
+</div>
+
+
+<!-- ===== GOSPEL READINGS PAGE ===== -->
+<div id="page-gospel" class="page">
+  <div class="saints-hero">
+    <h1>Daily Gospel</h1>
+    <p>"Your word is a lamp for my feet, a light for my path." — Psalm 119:105</p>
+    <div class="month-nav" id="gospel-month-nav">
+      <button class="month-btn" data-gmonth="1" onclick="switchGospelMonth(1)">January</button>
+      <button class="month-btn" data-gmonth="2" onclick="switchGospelMonth(2)">February</button>
+      <button class="month-btn" data-gmonth="3" onclick="switchGospelMonth(3)">March</button>
+      <button class="month-btn" data-gmonth="4" onclick="switchGospelMonth(4)">April</button>
+      <button class="month-btn" data-gmonth="5" onclick="switchGospelMonth(5)">May</button>
+      <button class="month-btn" data-gmonth="6" onclick="switchGospelMonth(6)">June</button>
+      <button class="month-btn" data-gmonth="7" onclick="switchGospelMonth(7)">July</button>
+      <button class="month-btn" data-gmonth="8" onclick="switchGospelMonth(8)">August</button>
+      <button class="month-btn" data-gmonth="9" onclick="switchGospelMonth(9)">September</button>
+      <button class="month-btn" data-gmonth="10" onclick="switchGospelMonth(10)">October</button>
+      <button class="month-btn" data-gmonth="11" onclick="switchGospelMonth(11)">November</button>
+      <button class="month-btn" data-gmonth="12" onclick="switchGospelMonth(12)">December</button>
+    </div>
+  </div>
+  <div class="saints-container">
+    <div id="gospel-list"></div>
+  </div>
+  <footer>
+    <div class="footer-cross"><img src="images/logo.png" style="height:40px;opacity:0.7;filter:brightness(0) invert(1);" alt="logo"></div>
+    <p>Liturgical Year C (Sundays) | Year II (Weekdays) | 2026</p>
+  </footer>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="work-modal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeWorkModal()">✕</button>
+    <h3 id="modal-title"></h3>
+    <div class="modal-scripture" id="modal-scripture"></div>
+    <div id="modal-body"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <img id="lightbox-img" src="" alt="Enlarged image">
+</div>
+
+<!-- SCROLL TOP -->
+<button class="scroll-top" id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script src="js/saints.js"></script>
+<script src="js/gospel.js"></script>
+<script src="js/prayers.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const now = new Date();
+    const dateStr = now.toLocaleDateString('en-US', {
+      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+    });
+    const el = document.getElementById('entry-date-display');
+    if (el) el.value = dateStr;
+  });
+</script>
+</body>
+</html>

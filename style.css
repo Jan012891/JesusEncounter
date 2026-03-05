@@ -1,0 +1,1514 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap');
+
+:root {
+  --bg-dark: #0c0b09;
+  --bg-card: #141210;
+  --bg-section: #111010;
+  --gold: #D14D42;
+  --gold-light: #e86d63;
+  --gold-dim: #a03830;
+  --white: #f5f0e8;
+  --gray: #888880;
+  --gray-light: #aaa9a5;
+  --red-accent: #8b2a1a;
+  --border: rgba(201,168,76,0.2);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-dark);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ======= NAVBAR ======= */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: rgba(10,9,8,0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 64px;
+}
+
+.nav-logo {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--white); }
+
+.nav-links {
+  display: flex;
+  gap: 0;
+  list-style: none;
+}
+
+.nav-links li a, .nav-links li button {
+  display: block;
+  padding: 0 24px;
+  height: 64px;
+  line-height: 64px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.3s, border-bottom 0.3s;
+  border-bottom: 2px solid transparent;
+  position: relative;
+}
+
+.nav-links li a:hover,
+.nav-links li button:hover,
+.nav-links li a.active,
+.nav-links li button.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ======= PAGES ======= */
+.page { display: none; min-height: 100vh; }
+.page.active { display: block; }
+
+/* ======= HOME - HERO ======= */
+.hero {
+  position: relative;
+  height: 100vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('images/church-bg.png');
+  background-size: cover;
+  background-position: center bottom;
+  filter: brightness(0.6);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(12,11,9,0.95) 0%, rgba(12,11,9,0.3) 60%, rgba(12,11,9,0.1) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 60px 80px;
+  max-width: 700px;
+}
+
+.hero-eyebrow {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--white);
+  margin-bottom: 28px;
+  letter-spacing: 0.02em;
+}
+
+.hero-title em {
+  font-style: italic;
+  color: var(--gold);
+  font-family: 'Playfair Display', serif;
+  font-size: 110%;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 14px 36px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: none;
+}
+
+.hero-cta:hover {
+  background: var(--gold);
+  color: var(--bg-dark);
+}
+
+/* ======= ABOUT SECTION ======= */
+.about-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 500px;
+  background: var(--bg-dark);
+}
+
+.about-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0.85;
+  filter: sepia(20%) brightness(0.7);
+}
+
+.about-text {
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+  opacity: 0.8;
+}
+
+.about-text p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  line-height: 1.85;
+  color: #ccc8c0;
+  font-weight: 400;
+}
+
+/* ======= QUOTE SECTION ======= */
+.quote-section {
+  background: var(--bg-section);
+  padding: 80px 60px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.quote-saint-img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.quote-content blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.quote-content blockquote::before { content: '\201C'; }
+.quote-content blockquote::after { content: '\201D'; }
+
+.quote-attribution {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ======= CORPORAL WORKS ======= */
+.works-section {
+  padding: 80px 60px;
+  background: var(--bg-dark);
+}
+
+.works-section h2 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.works-subtitle {
+  font-size: 0.8rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-top: 1px solid var(--border);
+}
+
+.work-item {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px 0;
+  border-bottom: 1px solid var(--border);
+  text-decoration: none;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.work-item:hover { background: rgba(201,168,76,0.03); padding-left: 12px; }
+
+.work-item img {
+  width: 110px;
+  height: 70px;
+  object-fit: cover;
+  flex-shrink: 0;
+  filter: brightness(0.75) sepia(20%);
+  transition: filter 0.3s;
+}
+
+.work-item:hover img { filter: brightness(0.9) sepia(10%); }
+
+.work-item-title {
+  flex: 1;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--white);
+  text-decoration: underline;
+  text-decoration-color: rgba(201,168,76,0.4);
+  text-underline-offset: 4px;
+}
+
+.work-read-more {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.work-item:hover .work-read-more { color: var(--gold); }
+.work-read-more::after { content: '↗'; font-size: 0.9rem; }
+
+/* Work Detail Modal */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.modal-overlay.open { display: flex; }
+
+.modal-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  max-width: 680px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 50px;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px; right: 20px;
+  background: none;
+  border: none;
+  color: var(--gray);
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+.modal-close:hover { color: var(--gold); }
+
+.modal-box h3 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--gold);
+  margin-bottom: 20px;
+}
+
+.modal-box p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 1.85;
+  color: #ccc8c0;
+  margin-bottom: 16px;
+}
+
+.modal-scripture {
+  border-left: 2px solid var(--gold);
+  padding-left: 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--gold-light);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+}
+
+/* ======= JESUS ENCOUNTER ======= */
+#page-encounter {
+  padding-top: 64px;
+  background: var(--bg-dark);
+  min-height: 100vh;
+}
+
+.encounter-hero {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.encounter-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/jesus-cross.png');
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.3) sepia(40%);
+}
+
+.encounter-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(12,11,9,0.3), rgba(12,11,9,0.9));
+}
+
+.encounter-hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.encounter-hero-text h1 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.encounter-hero-text p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.encounter-main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+/* Journal Form */
+.journal-form-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 40px;
+  margin-bottom: 50px;
+}
+
+.journal-form-card h2 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-bottom: 28px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-group label {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gray);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--border);
+  color: var(--white);
+  padding: 12px 16px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--gold-dim);
+}
+
+.form-group textarea { min-height: 160px; resize: vertical; }
+
+.photo-upload-area {
+  border: 1px dashed var(--border);
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.photo-upload-area:hover {
+  border-color: var(--gold-dim);
+  background: rgba(201,168,76,0.03);
+}
+
+.photo-upload-area input[type=file] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+.upload-icon { font-size: 2rem; margin-bottom: 8px; }
+.upload-text { font-size: 0.8rem; color: var(--gray); letter-spacing: 0.1em; }
+
+.photo-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.photo-preview img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+.btn-submit {
+  background: var(--gold);
+  color: var(--bg-dark);
+  border: none;
+  padding: 14px 40px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-submit:hover { background: var(--gold-light); }
+
+/* Journal Entries */
+.entries-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.entries-header h2 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+}
+
+.entries-count {
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+}
+
+.journal-entry {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 32px;
+  margin-bottom: 20px;
+  transition: border-color 0.3s;
+}
+
+.journal-entry:hover { border-color: var(--gold-dim); }
+
+.entry-date {
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+}
+
+.entry-title {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.entry-body {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: #bbb8b0;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+
+.entry-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.entry-images img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.entry-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.btn-delete {
+  background: none;
+  border: 1px solid #5a2020;
+  color: #aa5555;
+  padding: 6px 16px;
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.btn-delete:hover { background: #5a2020; color: var(--white); }
+
+.no-entries {
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--gray);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+/* ======= DAILY SAINTS ======= */
+#page-saints {
+  padding-top: 64px;
+  background: var(--bg-dark);
+  min-height: 100vh;
+}
+
+.saints-hero {
+  background: linear-gradient(135deg, #1a1208 0%, #0c0b09 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 60px;
+  text-align: center;
+}
+
+.saints-hero h1 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 2.5rem;
+  color: var(--white);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.saints-hero p {
+  color: var(--gray);
+  font-style: italic;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.month-nav {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.month-btn {
+  padding: 8px 22px;
+  border: 1px solid var(--border);
+  background: none;
+  color: var(--gray-light);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.month-btn:hover,
+.month-btn.active {
+  background: var(--gold);
+  color: var(--bg-dark);
+  border-color: var(--gold);
+}
+
+.saints-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 30px;
+}
+
+.saint-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  margin-bottom: 24px;
+  overflow: hidden;
+  display: none;
+}
+
+.saint-card.visible { display: block; }
+
+.saint-card-header {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+}
+
+.saint-date-badge {
+  background: var(--gold);
+  color: var(--bg-dark);
+  padding: 0 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  min-width: 90px;
+}
+
+.saint-date-badge .day {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.saint-date-badge .month-abbr {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.saint-info {
+  padding: 24px 28px;
+  flex: 1;
+}
+
+.saint-feast-type {
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+  opacity: 0.8;
+}
+
+.saint-name {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.4rem;
+  color: var(--white);
+  margin-bottom: 4px;
+}
+
+.saint-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gray-light);
+  font-style: italic;
+}
+
+.saint-content {
+  padding: 0 28px 28px;
+}
+
+.saint-expand-btn {
+  background: none;
+  border: none;
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 28px 16px;
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s;
+}
+
+.saint-expand-btn:hover { color: var(--gold-light); }
+
+.saint-bio,
+.saint-prayer-box {
+  display: none;
+}
+
+.saint-bio.open,
+.saint-prayer-box.open { display: block; }
+
+.saint-bio {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  color: #bbb8b0;
+  line-height: 1.85;
+  margin-bottom: 20px;
+  padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+
+.saint-prayer-box {
+  background: rgba(201,168,76,0.05);
+  border: 1px solid var(--border);
+  padding: 24px;
+  margin-top: 16px;
+}
+
+.saint-prayer-box h4 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--gold);
+  letter-spacing: 0.12em;
+  margin-bottom: 12px;
+}
+
+.saint-prayer-box p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #ccc8c0;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+/* ======= PRAYERS ======= */
+#page-prayers {
+  padding-top: 64px;
+  background: var(--bg-dark);
+  min-height: 100vh;
+}
+
+.prayers-hero {
+  position: relative;
+  height: 280px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prayers-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('images/jesus-cross.png');
+  background-size: cover;
+  background-position: center top;
+  filter: brightness(0.25) sepia(30%);
+}
+
+.prayers-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 30%, var(--bg-dark) 100%);
+}
+
+.prayers-hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.prayers-hero-text h1 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 2.4rem;
+  color: var(--white);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.prayers-hero-text p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.prayers-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  min-height: calc(100vh - 344px);
+}
+
+.prayers-sidebar {
+  background: var(--bg-card);
+  border-right: 1px solid var(--border);
+  padding: 30px 0;
+  position: sticky;
+  top: 64px;
+  max-height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.prayers-sidebar h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gray);
+  padding: 0 24px 12px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 8px;
+}
+
+.prayer-nav-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 12px 24px;
+  background: none;
+  border: none;
+  border-left: 2px solid transparent;
+  color: var(--gray-light);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.prayer-nav-btn:hover,
+.prayer-nav-btn.active {
+  color: var(--gold);
+  border-left-color: var(--gold);
+  background: rgba(201,168,76,0.05);
+}
+
+.prayer-nav-sub {
+  padding-left: 42px;
+  font-size: 0.73rem;
+  color: var(--gray);
+}
+
+.prayer-nav-sub.active { color: var(--gold-dim); }
+
+.prayers-content {
+  padding: 50px 60px;
+  max-width: 800px;
+}
+
+.prayer-section { display: none; }
+.prayer-section.active { display: block; }
+
+.prayer-section h2 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 2rem;
+  color: var(--white);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.prayer-section .prayer-tagline {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gray-light);
+  font-style: italic;
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+
+.prayer-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.15rem;
+  line-height: 2;
+  color: #d5d0c5;
+  white-space: pre-line;
+  margin-bottom: 28px;
+}
+
+.prayer-instruction {
+  background: rgba(201,168,76,0.06);
+  border-left: 3px solid var(--gold);
+  padding: 20px 24px;
+  margin: 24px 0;
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: var(--gold-light);
+  line-height: 1.75;
+}
+
+.rosary-mystery {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 28px;
+  margin-bottom: 16px;
+}
+
+.rosary-mystery h4 {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1rem;
+  color: var(--gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 16px;
+}
+
+.rosary-mystery ol {
+  list-style: none;
+  counter-reset: mystery;
+}
+
+.rosary-mystery ol li {
+  counter-increment: mystery;
+  padding: 8px 0 8px 36px;
+  position: relative;
+  border-bottom: 1px solid rgba(201,168,76,0.08);
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #ccc8c0;
+  line-height: 1.6;
+}
+
+.rosary-mystery ol li::before {
+  content: counter(mystery);
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  background: var(--gold);
+  color: var(--bg-dark);
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10px;
+}
+
+.day-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.day-tag {
+  padding: 4px 14px;
+  background: rgba(201,168,76,0.1);
+  border: 1px solid var(--border);
+  color: var(--gold);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.rosary-guide-steps {
+  counter-reset: step;
+}
+
+.rosary-guide-steps .step {
+  display: flex;
+  gap: 20px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: flex-start;
+  counter-increment: step;
+}
+
+.step-num {
+  width: 32px;
+  height: 32px;
+  background: var(--gold);
+  color: var(--bg-dark);
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: #ccc8c0;
+  line-height: 1.7;
+  padding-top: 6px;
+}
+
+.step-text strong {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 1.05rem;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ======= FOOTER ======= */
+footer {
+  background: #080807;
+  border-top: 1px solid var(--border);
+  padding: 40px 60px;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Montserrat', sans-serif; font-weight: 700;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+
+.footer-cross {
+  font-size: 1.5rem;
+  color: var(--gold-dim);
+  margin-bottom: 12px;
+}
+
+footer p {
+  font-size: 0.72rem;
+  color: var(--gray);
+  letter-spacing: 0.1em;
+}
+
+/* ======= IMAGE LIGHTBOX ======= */
+.lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 3000;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox.open { display: flex; }
+
+.lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border: 1px solid var(--border);
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 20px; right: 24px;
+  font-size: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: color 0.3s;
+}
+
+.lightbox-close:hover { color: var(--gold); }
+
+/* ======= SCROLL TOP ======= */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 44px;
+  height: 44px;
+  background: var(--gold);
+  color: var(--bg-dark);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 500;
+  transition: all 0.3s;
+}
+
+.scroll-top:hover { background: var(--gold-light); }
+.scroll-top.visible { display: flex; }
+
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  nav { padding: 0 16px; }
+  .nav-logo { font-size: 1.1rem; }
+  .nav-links li a, .nav-links li button { padding: 0 12px; font-size: 0.65rem; }
+
+  .hero-content { padding: 0 24px 60px; }
+  .hero-title { font-size: 1.8rem; }
+
+  .about-section { grid-template-columns: 1fr; }
+  .about-image { height: 300px; }
+  .about-text { padding: 40px 24px; }
+
+  .quote-section { padding: 40px 24px; flex-direction: column; }
+  .works-section { padding: 40px 24px; }
+
+  .encounter-main { padding: 30px 16px; }
+  .journal-form-card { padding: 24px; }
+  .form-row { grid-template-columns: 1fr; }
+
+  .saints-hero { padding: 40px 24px; }
+  .saints-container { padding: 30px 16px; }
+
+  .prayers-layout { grid-template-columns: 1fr; }
+  .prayers-sidebar { position: static; max-height: none; border-right: none; border-bottom: 1px solid var(--border); }
+  .prayers-content { padding: 30px 20px; }
+}
+
+/* ===== REVISIONS ===== */
+
+/* CENTER HERO CONTENT */
+.hero {
+  align-items: center !important;
+  justify-content: center !important;
+}
+.hero-content {
+  text-align: center !important;
+  padding: 0 40px 0 !important;
+  max-width: 800px !important;
+}
+.hero-overlay {
+  background: linear-gradient(to top, rgba(12,11,9,0.85) 0%, rgba(12,11,9,0.45) 50%, rgba(12,11,9,0.3) 100%) !important;
+}
+
+/* ABOUT / OUR MISSION — full-width image, text overlaid */
+.about-section {
+  display: block !important;
+  position: relative !important;
+  min-height: 560px !important;
+  overflow: hidden !important;
+}
+.about-image {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.about-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  filter: brightness(0.35) sepia(20%) !important;
+}
+.about-text {
+  position: relative !important;
+  z-index: 2 !important;
+  max-width: 780px !important;
+  margin: 0 auto !important;
+  padding: 100px 40px !important;
+  text-align: center !important;
+}
+.about-text .section-label {
+  color: var(--gold) !important;
+}
+.about-text p {
+  color: rgba(245,240,232,0.88) !important;
+}
+
+/* CENTER QUOTE SECTION */
+.quote-section {
+  flex-direction: column !important;
+  text-align: center !important;
+  align-items: center !important;
+  padding: 80px 60px !important;
+}
+.quote-content blockquote {
+  font-size: 1.8rem !important;
+}
+
+/* NAV LOGO — use image */
+.nav-logo-img {
+  height: 36px;
+  width: auto;
+  margin-right: 10px;
+  vertical-align: middle;
+  filter: brightness(0) invert(1);
+}
+.nav-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+}
+
+
+/* ===== REVISION 2 — CLEAN MINIMAL ===== */
+
+/* --- Saints: smaller compact date badge --- */
+.saint-card {
+  margin-bottom: 12px !important;
+  border-radius: 0 !important;
+}
+
+.saint-card-header {
+  align-items: center !important;
+}
+
+.saint-date-badge {
+  min-width: 60px !important;
+  padding: 12px 16px !important;
+  flex-direction: row !important;
+  gap: 6px !important;
+  align-items: baseline !important;
+}
+
+.saint-date-badge .day {
+  font-size: 1.1rem !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+}
+
+.saint-date-badge .month-abbr {
+  font-size: 0.6rem !important;
+  letter-spacing: 0.1em !important;
+  margin-top: 0 !important;
+  opacity: 0.85;
+}
+
+.saint-info {
+  padding: 14px 20px !important;
+}
+
+.saint-feast-type {
+  font-size: 0.58rem !important;
+  margin-bottom: 2px !important;
+}
+
+.saint-name {
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  margin-bottom: 2px !important;
+}
+
+.saint-subtitle {
+  font-size: 0.82rem !important;
+}
+
+.saint-expand-btn {
+  font-size: 0.62rem !important;
+  padding: 8px 20px 10px !important;
+}
+
+/* --- Journal photo display --- */
+.entry-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.entry-images img {
+  width: 280px !important;
+  height: 280px !important;
+  object-fit: cover !important;
+  border: 1px solid var(--border) !important;
+}
+
+/* --- Remove delete btn style (already removed from HTML but just in case) --- */
+.btn-delete { display: none !important; }
+.entry-actions { display: none !important; }
+
+/* --- Cleaner journal entry --- */
+.journal-entry {
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  background: transparent !important;
+  padding: 28px 0 !important;
+  border-radius: 0 !important;
+}
+
+.journal-entry:hover {
+  border-color: var(--gold) !important;
+  background: transparent !important;
+}
+
+.entry-date {
+  font-size: 0.62rem !important;
+  letter-spacing: 0.18em !important;
+  margin-bottom: 6px !important;
+}
+
+.entry-title {
+  font-size: 1.1rem !important;
+  margin-bottom: 10px !important;
+}
+
+/* --- Cleaner form card --- */
+.journal-form-card {
+  background: transparent !important;
+  border: none !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding: 0 0 40px 0 !important;
+}
+
+.journal-form-card h2 {
+  font-size: 1rem !important;
+  letter-spacing: 0.12em !important;
+  margin-bottom: 24px !important;
+}
+
+/* --- Cleaner entries header --- */
+.entries-header {
+  padding-top: 40px;
+  border-top: none !important;
+}
+
+.entries-header h2 {
+  font-size: 0.9rem !important;
+  letter-spacing: 0.15em !important;
+  color: var(--gray-light) !important;
+  font-weight: 400 !important;
+  text-transform: uppercase !important;
+}
+
+/* --- No entries message cleaner --- */
+.no-entries {
+  font-size: 0.85rem !important;
+  padding: 40px 0 !important;
+  color: var(--gray) !important;
+  font-style: normal !important;
+  font-family: 'Montserrat', sans-serif !important;
+  letter-spacing: 0.05em !important;
+}
+
+
+/* ===== GOSPEL READINGS STYLES ===== */
+.gospel-verse {
+  font-family: 'Playfair Display', serif !important;
+  font-size: 1.1rem !important;
+  font-style: italic !important;
+  color: var(--gold) !important;
+  border-left: 2px solid var(--gold) !important;
+  padding: 12px 20px !important;
+  margin: 0 0 16px 0 !important;
+  line-height: 1.7 !important;
+}
+
+.gospel-ref {
+  color: var(--gold) !important;
+  font-style: normal !important;
+  font-size: 0.78rem !important;
+  letter-spacing: 0.08em !important;
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 600 !important;
+}
+
+.gospel-season {
+  opacity: 1 !important;
+}
+
+.gospel-card .saint-bio {
+  padding-top: 14px !important;
+  border-top: 1px solid var(--border) !important;
+}
+
+/* Month nav scroll on mobile */
+.month-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* nav scroll */
+#page-gospel .saints-hero .month-nav,
+#page-saints .saints-hero .month-nav {
+  max-width: 100%;
+  padding: 0 10px;
+}
+
